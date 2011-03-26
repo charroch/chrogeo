@@ -1,0 +1,40 @@
+<web-app
+   xmlns="http://java.sun.com/xml/ns/javaee"
+   version="2.5">
+
+   <servlet>
+      <servlet-name>chrogeo</servlet-name>
+      <servlet-class>com.novoda.chrogeo.server.Chrogeo</servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>chrogeo</servlet-name>
+      <url-pattern>/*</url-pattern>
+   </servlet-mapping>
+   
+   <servlet>
+      <servlet-name>clag</servlet-name>
+      <servlet-class>novoda.clag.servlet.ClagServlet</servlet-class>
+      <init-param>
+         <param-name>converter</param-name>
+         <param-value>novoda.clag.converter.json.SqliteJsonConverter</param-value>
+      </init-param>
+      <init-param>
+         <param-name>contentClasses</param-name>
+         <param-value>com.novoda.chrogeo.shared.DataPoint</param-value>
+      </init-param>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>clag</servlet-name>
+      <url-pattern>/data/*</url-pattern>
+   </servlet-mapping>
+   
+   <filter>
+      <filter-name>eTagFilter</filter-name>
+      <filter-class>novoda.clag.servlet.ETagFilter</filter-class>
+   </filter>
+   <filter-mapping>
+      <filter-name>eTagFilter</filter-name>
+      <url-pattern>/data/*</url-pattern>
+   </filter-mapping>
+   
+</web-app>
