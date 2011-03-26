@@ -1,4 +1,7 @@
+
 package rewired.state.activity;
+
+import rewired.state.R;
 
 import android.app.Activity;
 import android.os.Bundle;
