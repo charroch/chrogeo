@@ -1,0 +1,3 @@
+[submodule "timescape_plugin/libs/Idores"]
+	path = timescape_plugin/libs/Idores
+	url = git@github.com:novoda/Idores.git
