@@ -21,6 +21,8 @@
 				<action android:name="com.sonyericsson.eventstream.SEND_STATUS_UPDATE" />
 			</intent-filter>
 		</receiver>
+		
+		<service android:name=".service.ColoredDataFetcherService" />
 
 	</application>
 
